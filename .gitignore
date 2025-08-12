@@ -1,23 +1,8 @@
-# Project Indexes of Jetbrains Apps
 .idea/
-
-# DB Connection Informations (uncomment when you start using the template)
 config/db.php
-
-# Fonts
-public/font/
-
-# Pictures
-public/img/
-
-# Dart-Sass
-public/dart-sass/
-
-# Frontend Dependencies
-public/node_modules/
-
-# PHP Dependencies
+img/
+images/
 vendor/
-
-# Js tinymce
-public/js/tinymce/
+.gitattibutes/
+public/node_modules
+public/sass
