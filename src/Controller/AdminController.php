@@ -71,16 +71,17 @@ class AdminController extends MainController
      */
     public function createMethod()
     {
-      $first_name   = $this->post['first_name'];
-      $last_name    = $this->post['last_name'];
-      $nickname     = $this->post['nickname'];
-      $email        = $this->post['email'];
-      $pass         = $this->post['pass'];
+      $first_name   = $this->post['first_name'] ?? '';
+      $last_name    = $this->post['last_name'] ?? '';
+      $nickname     = $this->post['nickname'] ?? '';
+      $email        = $this->post['email'] ?? '';
+      $pass         = $this->post['pass'] ?? '';
 
-      if (empty($first_name && $last_name && $nickname && $email && $pass)) {
-        if ($this->getUserVar('status') == 'admin'){
+      if (empty($first_name) || empty($last_name) || empty($nickname) || empty($email) || empty($pass)) {
+        if ($this->getUserVar('status') == 'admin') {
           return $this->render('backend/adminCreate.twig');
-        } $this->redirect('home');
+        }
+      $this->redirect('home');
       }
 
       $pass_encrypted = password_hash($pass, PASSWORD_DEFAULT);
